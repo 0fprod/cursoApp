@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: "pipes", loadChildren: "app/pipes/pipes.module#PipesModule"},
   { path: "servicios", loadChildren: "app/servicios/servicios.module#ServiciosModule"},
   { path: "rutas", loadChildren: "app/rutas/rutas.module#RutasModule"},
-  { path: "formularios", loadChildren: "app/formularios/formularios.module#FormulariosModule"}
+  { path: "formularios", loadChildren: "app/formularios/formularios.module#FormulariosModule"},
+  { path: "firebase", loadChildren: "app/firebase/firebase.module#FirebaseModule"}
 ];
 
 @NgModule({
