@@ -1,0 +1,39 @@
+<app-menu [menu]="menuLinks"></app-menu>
+<div class="page">
+  <div class="row no-gutters page bg-info text-white" style="height:100%">
+    <div class="container">
+      <h4> Hora : {{ now | date:'shortTime' }}</h4>
+      <h4> Hora : {{ now | date:'longTime' }}</h4>
+      <h4> Fecha : {{ now | date:'long' }}</h4>
+      <h4> Fecha : {{ now | date:'shortDate' }}</h4>
+      <h4> Fecha : {{ now | date:'medium' }}</h4>
+      <h4>
+        <a href="https://angular.io/api/common/DatePipe">Mas formatos </a>
+      </h4>
+      <hr>
+      <h4> Original : {{ texto }} </h4>
+      <h4> Mayusculas: {{ texto | uppercase }}</h4>
+      <h4> Minusculas: {{ texto | lowercase }}</h4>
+      <hr>
+      <h4> Decumal : {{ num | number }}</h4>
+      <h4> Decumal : {{ num | number:'.2-2' }}</h4>
+      <h4> Decumal : {{ num | number:'3.2-2' }}</h4>
+      <h4>
+        <a href="https://angular.io/api/common/DecimalPipe">Mas formatos </a>
+      </h4>
+      <hr>
+      <h4> Euro : {{ moneda | currency :'EUR':true }}</h4>
+      <h4> Dolar : {{ moneda | currency:'USD':true }}</h4>
+      <h4>
+        <a href="https://angular.io/api/common/CurrencyPipe">Mas formatos </a>
+      </h4>
+      <hr>
+      <select (change)="onChange($event.target.value)">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <h4>{{gender | i18nSelect: inviteMap}}</h4>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<app-menu [menu]="menuLinks"></app-menu>
+<div class="page">
+  
+    <div class="jumbotron jumbotron-fluid text-center">
+      <h1>{{ texto }}</h1>
+    </div>
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr class="filters">
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of proveed">
+          <td> {{ item.id }}</td>
+          <td> {{ item.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+</div>

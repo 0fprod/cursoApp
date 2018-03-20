@@ -1,0 +1,9 @@
+<div class="row no-gutters page bg-info text-white" style="height:100%">
+    <div class="container">
+      <label>Introduzca un numero:</label>
+      <input type="number" class="form-control" [(ngModel)]="puntuacion"/>
+      <hr>
+      <h4>Puntuación:</h4>
+      <h4 [ngStyle]="{color: setColor()}">{{ puntuacion }}</h4>
+    </div>
+  </div>

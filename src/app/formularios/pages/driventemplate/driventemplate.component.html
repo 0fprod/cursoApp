@@ -1,0 +1,70 @@
+<div class="row no-gutters bg-info text-white" style="height:100%">
+
+  <div class="container text-center">
+    <h2>TemplateDrivenForm</h2>
+    <form (ngSubmit)="onSave()" #form="ngForm">
+      <div class="form-group row justify-content-center">
+        <div class="col-2">
+          <label for="id">ID</label>
+          <input class="form-control input-md" id="id" type="number" ngModel name="id" required #id="ngModel">
+        </div>
+        <div *ngIf="id.invalid && id.touched" class="col-2 bg-danger text-white">
+          Error! El id debe ser un dígito.
+        </div>
+        <div class="col-2">
+          <label for="name">Nombre</label>
+          <input class="form-control input-lg" id="name" type="text" ngModel name="name" pattern="A\d{6}" #name="ngModel">
+        </div>
+        <div *ngIf="name.invalid && name.touched" class="col-2 bg-danger text-white">
+          Error! El nombre debe ser 'A' y 6 dígitos
+        </div>
+        <div class="col-2">
+          <label for="email">Email</label>
+          <input class="form-control input-sm" id="email" type="email" ngModel name="city" email #city="ngModel">
+        </div>
+        <div *ngIf="city.invalid && city.touched" class="col-2 bg-danger text-white">
+          Error! em@mail invalido.
+        </div>
+        <div class="col-2">
+          <label for="select">Options</label>
+          <select id="select" ngModel class="form-control" name="opt">
+            <option *ngFor="let opt of select" [value]="opt" >{{opt}}</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+        Enviar
+      </button>
+    </form>
+  </div>
+
+  <div id="resp" class="text-center col-12">
+      <h4>{{ alumno | json }} </h4>
+      <h3>Opcion: {{ option }}</h3>
+    </div>
+
+  <div id="resp" class="text-center col-12">
+    <h4>Estados del formulario.id</h4>
+    <h6>Dirty:   {{ form.controls.id.dirty }}</h6>
+    <h6>Pristine:{{ form.controls.id.pristine }}</h6>
+    <h6>Touched: {{ form.controls.id.touched }}</h6>
+    <h6>Valid:   {{ form.controls.id.valid }}</h6>
+    <h6>Invalid: {{ form.controls.id.invalid }}</h6>
+    <hr>
+    <h4>Estados del formulario.name</h4>
+    <h6>Dirty:   {{ form.controls.name.dirty }}</h6>
+    <h6>Pristine:{{ form.controls.name.pristine }}</h6>
+    <h6>Touched: {{ form.controls.name.touched }}</h6>
+    <h6>Valid:   {{ form.controls.name.valid }}</h6>
+    <h6>Invalid: {{ form.controls.name.invalid }}</h6>
+    <hr>
+    <h4>Estados del formulario.email</h4>
+    <h6>Dirty:   {{ form.controls.city.dirty }}</h6>
+    <h6>Pristine:{{ form.controls.city.pristine }}</h6>
+    <h6>Touched: {{ form.controls.city.touched }}</h6>
+    <h6>Valid:   {{ form.controls.city.valid }}</h6>
+    <h6>Invalid: {{ form.controls.city.invalid }}</h6>
+  </div>
+
+
+</div>

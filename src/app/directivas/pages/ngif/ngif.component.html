@@ -1,0 +1,32 @@
+<div class="row no-gutters page bg-info text-white" style="height:100%">
+  <div class="container">
+    <h1 class="text-center">NgIf + Else + Methods</h1>
+
+    <label> Escribe algo </label>
+    <input type="text" class="form-control" [(ngModel)]="texto">
+
+    <!-- Si texto no existe se muestra el #desactivado-->
+    <div class="direction-column" *ngIf="texto; else desactivado">
+      <h2 class="text-left">ngIf</h2>
+      <button type="submit" class="btn btn-primary" > Click </button>
+    </div>
+
+    <!-- else -->
+
+    <ng-template #desactivado>
+      <h2 class="text-left">Else</h2>
+      <button type="submit" class="btn btn-primary" disabled> Click </button>
+    </ng-template>
+
+    <h2 class="text-left">Métodos</h2>
+    <label> Escribe 'respuesta' </label>
+    <input type="text" class="form-control" [(ngModel)]="respuesta">
+    <p *ngIf="!respuesta; else correcto"> --- </p>
+    <ng-template #correcto>
+      <h4 *ngIf="setResultado(); else incorrecto">¡Correcto!</h4>
+    </ng-template>
+    <ng-template #incorrecto>
+      <h4>Incorrecto!</h4>
+    </ng-template>
+  </div>
+</div>

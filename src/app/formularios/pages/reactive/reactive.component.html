@@ -1,0 +1,27 @@
+<div class="row no-gutters bg-info text-white" style="height:100%">
+
+  <form class="col-6">
+    <div class="form-group col-6">
+      <label for="id">ID</label>
+      <input class="form-control" type="number" name="id" id="id">
+    </div>
+    <div class="form-group col-6">
+      <label for="Nombre">Nombre</label>
+      <input class="form-control" type="text" name="nombre" id="name">
+    </div>
+    <div class="form-group col-6">
+      <label for="city">City</label>
+      <input class="form-control" type="text" name="city" id="city">
+    </div>
+    <div class="form-group col-6">
+      <label for="option">Option</label>
+      <select name="" id="">
+        <option *ngFor="let opt of options" [value]="opt"> {{ opt }}</option>
+      </select>
+    </div>
+  </form>
+  <div id="resp" class="col-6">
+    {{ alumno | json }}
+  </div>
+
+</div>

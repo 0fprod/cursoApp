@@ -1,0 +1,7 @@
+<div class="row no-gutters fixedbar justify-content-center align-items-center">
+  <ul class="nav nav-pills">
+    <li *ngFor="let link of menu" class="nav-item">
+      <a class="nav-link" routerLinkActive="active" routerLink="{{link.link}}">{{link.label}}</a>
+    </li>
+  </ul>
+</div>

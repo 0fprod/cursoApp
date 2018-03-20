@@ -1,0 +1,15 @@
+<div class="row no-gutters page bg-info text-white" style="height:100%">
+    <div class="container">
+      <ul class="list-group" *ngFor="let jugador of jugadores" [ngSwitch]="jugador.team">
+        <li class="list-group-item bulls" *ngSwitchCase="'Chicago Bulls'">
+          {{jugador.name}} | {{jugador.team}}
+        </li>
+        <li class="list-group-item lakers" *ngSwitchCase="'LA Lakers'">
+          {{jugador.name}} | {{jugador.team}}
+        </li>
+        <li class="list-group-item heat" *ngSwitchCase="'Miami Heat'">
+          {{jugador.name}} | {{jugador.team}}
+        </li>
+      </ul>
+    </div>
+  </div>
