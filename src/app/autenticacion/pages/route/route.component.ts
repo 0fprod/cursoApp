@@ -25,6 +25,7 @@ export class RouteComponent implements OnInit {
 
   private logout(){
     firebase.auth().signOut();
+    this.currentUser = 'not logged in';
   }
 
 }
