@@ -1,0 +1,23 @@
+<div class="row no-gutters bg-info text-white" style="height:100%">
+
+  <div class="container text-center">
+    <h2>TemplateDrivenForm</h2>
+    <form (ngSubmit)="onSave()" #form="ngForm">
+      <div class="form-group row justify-content-center">
+        <div class="col-2">
+          <label for="email">Email</label>
+          <input class="form-control input-sm" id="email" type="email" ngModel name="email" email #email="ngModel">
+        </div>
+        <div *ngIf="email.invalid && email.touched" class="col-2 bg-danger text-white">
+          Error! em@mail invalido.
+        </div>
+        <div class="col-2">
+          <label for="password">Password</label>
+          <input class="form-control input-sm" id="password" type="password" ngModel name="password" password required #password="ngModel">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+        Enviar
+      </button>
+    </form>
+  </div>
